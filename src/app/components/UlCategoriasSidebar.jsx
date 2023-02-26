@@ -17,8 +17,10 @@ export default function UlCategoriasSidebar({ data }) {
   return (
     <>
       {categorias?.map((cat, i) => (
-        <ul className="flex flex-col w-10/12  text-gray-500">
-          <ItemsCategorias name={cat} key={i} imgSrc={""} data={data} />
+        <ul 
+        key={i}
+        className="flex flex-col w-10/12  text-gray-500">
+          <ItemsCategorias name={cat}  imgSrc={""} data={data} />
         </ul>
       ))}
     </>
