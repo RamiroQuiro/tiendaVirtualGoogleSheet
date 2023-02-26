@@ -4,9 +4,8 @@ const nextConfig = {
   images: {
     domains:["www.dropbox.com","lh3.googleusercontent.com","drive.google.com"],
     remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'www.dropbox.com',
+      { protocol: 'https',
+        hostname: '**.google.com',
         port: '',
         pathname: '/s/**',
       },

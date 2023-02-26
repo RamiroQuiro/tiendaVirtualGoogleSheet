@@ -6,8 +6,9 @@ import { useCarritoCompras } from "../../context/contextStore";
 
 
 export default function ButtonAñadirCarrito({ item }) {
-  const { addItemtoCart, cantidadPorItem ,restarItemCarrito} = useCarritoCompras(
+  const { addItemtoCart,items, cantidadPorItem ,restarItemCarrito} = useCarritoCompras(
     (state) => ({
+      items:state.items,
       addItemtoCart: state.addItemtoCart,
       cantidadPorItem: state.cantidadPorItem,
       restarItemCarrito:state.restarItemCarrito
@@ -21,10 +22,15 @@ export default function ButtonAñadirCarrito({ item }) {
   };
 
 const handleRestarItems=()=>{
-  console.log('anda?',item)
   restarItemCarrito(item)
 setQtyItems(cantidadPorItem(item));
 }
+const arrayFind=items.find(it=>it.id==item.id)
+// if (!arrayFind) {
+//     setQtyItems(0)
+// }
+
+console.log(arrayFind)
 
   return (
     <>

@@ -1,25 +1,22 @@
 "use client";
 import { create } from "zustand";
 
-
 export const useCarritoCompras = create((set, get) => ({
   isOpen: false,
   items: [],
   cantidadPorItem: (item) => {
     const { items } = get();
     const temp = items;
-    const encontrado = temp.find(
-      (product) => product.id == item.id
-    );
-    return encontrado.qty
+    const encontrado = temp.find((product) => product.id == item.id);
+    return encontrado?.qty;
   },
   addItemtoCart: (item) => {
     const { items } = get();
     const temp = items;
-    const find  = temp.find( (product)  => product.id == item.id)
+    const find = temp.find((product) => product.id == item.id);
 
     if (find) {
-      find.qty++
+      find.qty++;
     } else {
       item.qty = 1;
       temp.push(item);
@@ -48,15 +45,17 @@ export const useCarritoCompras = create((set, get) => ({
   restarItemCarrito: (item) => {
     const { items } = get();
     let temp = items;
-    const find= temp.find((product) => product.id == item.id);
-      if (find.qty > 0) {
-        find.qty--;
-      }else{
-    set((state) => ({
-      ...state,
-      items:
-        find.qty > 0 ? temp : temp.filter((product) => product.id != item.id),
-    }))}
+    const find = temp.find((product) => product.id == item.id);
+    if (find.qty > 0) {
+      find.qty--;
+    } 
+    if (find.qty==0) {
+        set((state) => ({
+          ...state,
+          items: temp.filter((product) => product.id != item.id),
+        }));
+        
+    } 
   },
   getNumberOfItem: (state) => {
     const total = state.items.reduce((acc, item) => acc + item.qty, 0);
@@ -64,7 +63,7 @@ export const useCarritoCompras = create((set, get) => ({
   },
   getSubtotal: (state) => {
     const { items } = get();
-    const subtotal =items.reduce(
+    const subtotal = items.reduce(
       (acc, item) => acc + item.price * item.qty,
       0
     );
