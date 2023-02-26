@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useFilterProduct } from "../../context/filter";
-export default function InputSearch({ label}) {
+export default function InputSearch({label}) {
 
 const [inputState, setInputState] = useState("")
   const {inputSearh,inputSearchSubCategory}=useFilterProduct((state)=>({
@@ -19,7 +19,7 @@ setInputState(e.target.value)
   }
 
   
-  if (label == "navBar")
+  if (label === "navBar")
     return (
       <div
         className="bg-gray-200 rounded-full hidden md:block md:w-4/12 "
@@ -37,7 +37,7 @@ setInputState(e.target.value)
       </div>
     );
 
-  if (label == "banner")
+  if (label === "banner")
     return (
       <div
         className="relative bg-white rounded-full w-full overflow-hidden border-0  shadow-gray-600/30"

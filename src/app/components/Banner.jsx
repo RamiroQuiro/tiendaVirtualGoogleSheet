@@ -1,5 +1,7 @@
 import Image from "next/image";
 import BannerImg from "../../images/banner.jpg";
+import InputSearch from "./InputSearch";
+
 export default function Banner() {
 
 
@@ -12,13 +14,16 @@ export default function Banner() {
         <span className="md:text-xl  text-gray-700 font-medium  underline underline-offset-3 decoration-[3px] decoration-blue-600/70 ">
           Busca y Elegí tus productos y mandanos tu carrito por WhatsApp y pasa a retirar.
         </span>
-        {/* <InputSearch label={"banner"}/>       */}
+    <InputSearch
+    label={"banner"}
+    key="banner"
+    />        
       </div>
       <div className="w-full md:h-full h-1/2 top-0 left-0 z-10 absolute bg-gradient-to-b from-neutral-100/30 via-neutral-100/50 to-white backdrop-blur-[2px]"></div>
       <Image
       src={BannerImg}
-      width="100"
-      height={"100"}
+      width="100vw"
+      height={"100vh"}
       alt="banner"
       className="absolute w-full h-full object-cover top-0 left-0 aspect-square saturate-75"
       />
