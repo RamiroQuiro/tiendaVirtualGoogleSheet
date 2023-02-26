@@ -1,8 +1,8 @@
 "use client";
 
-import { useCarritoCompras } from "../../context/contextStore";
 import { shallow } from "zustand/shallow";
 import { useState } from "react";
+import { useCarritoCompras } from "../../context/contextStore";
 
 
 export default function ButtonAñadirCarrito({ item }) {
