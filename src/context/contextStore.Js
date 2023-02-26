@@ -2,7 +2,7 @@
 import { create } from "zustand";
 
 
-
+// contexto
 export const useCarritoCompras = create((set, get) => ({
   isOpen: false,
   items: [],
