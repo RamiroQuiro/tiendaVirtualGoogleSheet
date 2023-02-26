@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Logo from "../../images/logoCarpinteria.png";
-import InputSearch from "./inputSearch";
 import Menu from "./menu";
 
 export default function Header() {
@@ -39,9 +38,9 @@ export default function Header() {
           />
           <h2 className=" text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r to-orange-600 from-orange-800">DesignSoft</h2>
         </Link>
-        {scrollTop > 395 && (
+        {/* {scrollTop > 395 && (
           <InputSearch label={"navBar"}   />
-        )}
+        )} */}
         <Menu />
       </div>
     </header>
