@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "incremental": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "strictNullChecks": true
+  },
+  "include": [
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    "**/*.ts",
+    "**/*.tsx"
+, "src/app/components/header.jsx", "src/app/components/Carts.jsx", "src/app/components/CarritoHeader.jsx", "src/app/components/CardsHome.jsx", "src/app/components/ButtonSacarProductCarrito.jsx", "src/app/components/ButtondePagarCarrito.jsx", "src/app/components/ButtonCaregorias.jsx", "src/app/components/ButtonAñadirCarrito.jsx", "src/app/components/Products.jsx", "src/app/components/menu.jsx", "src/app/components/ListaProductosCategoriasSidebar.jsx", "src/app/components/ItemsCategorias.jsx", "src/app/store/[id]/page.jsx", "src/app/store/page.jsx", "src/app/Footer/Foteer.jsx", "src/app/faq/page.jsx", "src/app/Contacto/page.hsx", "src/app/components/UlCategoriasSidebar.jsx", "src/app/components/TiendadelHome.jsx", "src/app/components/SidebarCategoriasStre.jsx"  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
