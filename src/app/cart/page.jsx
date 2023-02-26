@@ -1,5 +1,5 @@
 "use client"
-import { useCarritoCompras } from '../../context/contextStore';
+import { useCarritoCompras } from '../context/contextStore';
 import Carts from '../components/Carts';
 
 export default function Cart() {

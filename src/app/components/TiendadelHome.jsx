@@ -1,6 +1,6 @@
 "use client";
-import { useCarritoCompras } from "../../context/contextStore";
-import { useFilterProduct } from "../../context/filter";
+import { useCarritoCompras } from "../context/contextStore";
+import { useFilterProduct } from "../context/filter";
 import Products from "./Products";
 
 

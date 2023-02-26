@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { useFilterProduct } from "../../context/filter";
+import { useFilterProduct } from "../context/filter";
 export default function InputSearch({ label}) {
 
 const [inputState, setInputState] = useState("")
