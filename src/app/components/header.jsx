@@ -8,9 +8,6 @@ import Menu from "./menu";
 
 export default function Header() {
   const [scrollTop, setScrollTop] = useState(0);
-  // const [referenciaInputSearch, setReferenciaInputSearch] = useState({})
-  // const referenciaInputSearch = useRef();
-  // const referenciaInput = useGetBounding();
 
   useEffect(() => {
 
