@@ -1,7 +1,7 @@
 "use client";
 
 import { shallow } from "zustand/shallow";
-import { useCarritoCompras } from "../context/contextStore";
+import { useCarritoCompras } from "../../context/contextStore";
 
 export default function CarritoHeader() {
   const { items, isOpen, getNumberOfItem, openCart, getSubtotal } =

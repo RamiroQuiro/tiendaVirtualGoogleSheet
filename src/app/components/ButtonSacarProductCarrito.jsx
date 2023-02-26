@@ -1,6 +1,6 @@
 "use client"
 
-import { useCarritoCompras } from "../context/contextStore"
+import { useCarritoCompras } from "../../context/contextStore"
 
 
 
