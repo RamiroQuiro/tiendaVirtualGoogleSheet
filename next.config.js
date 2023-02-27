@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains:["www.dropbox.com","lh3.googleusercontent.com","drive.google.com"],
+    domains:["lh3.googleusercontent.com","drive.google.com","googleusercontent.com","docs.googleusercontent.com"],
     remotePatterns: [
       { protocol: 'https',
         hostname: '**.google.com',

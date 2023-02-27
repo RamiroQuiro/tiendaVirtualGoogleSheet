@@ -22,7 +22,7 @@ setInputState(e.target.value)
   if (label === "navBar")
     return (
       <div
-        className="bg-gray-200 rounded-full hidden md:block md:w-4/12 "
+        className="bg-gray-100 rounded-full hidden md:block md:w-4/12 "
       >
         <input
         onChange={handleOnChangeInput}
@@ -31,7 +31,7 @@ setInputState(e.target.value)
           type="search"
           name="buscar"
           id="buscar"
-          className="w-full py-3  px-5 text-gray-600 font-semibold    border-gray-300 bg-gray-200 rounded-full focus:ring-2  outline-none transition-colors duration-200 ease-in-out"
+          className="w-full py-3  px-5 text-gray-600 font-semibold    border-gray-300 bg-gray-100 rounded-full focus:ring-2  outline-none transition-colors duration-200 ease-in-out"
           placeholder="Buscar tu producto..."
         />
       </div>

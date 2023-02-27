@@ -18,8 +18,8 @@ export default function Products({ item, showAs }) {
           href={"/store/" + item.id}
         >
           <Image
-            width={"100"}
-            height="100"
+            width={100}
+            height={100}
             alt={item.title}
             className="rounded-xl object-center  w-10/12 h-4/6 object-cover m-auto block"
             src={item.image_url}
@@ -261,7 +261,7 @@ export default function Products({ item, showAs }) {
                 </div>
               </div>
             </div>
-            <div className="flex items-center">
+            <div className="flex items-center justify-between">
               <span className="title-font font-medium text-2xl mr-5 text-gray-900">
                 ${item.price}
               </span>

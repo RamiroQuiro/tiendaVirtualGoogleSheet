@@ -15,14 +15,14 @@ export default function Menu() {
     },
 
     {
-      link: "./contacto",
+      link: "./Contacto",
       name: "Contacto",
       img: "",
     },
   ];
 
   return (
-    <nav className="flex md:w-4/12  lg:w-4/12 w-full md:mr-10 flex-wrap items-center gap-x-5 text-sm md:gap-0 justify-between md:text-lg capitalize  tracking-wider font-normal md:ml-auto">
+    <nav className="flex md:w-4/12  lg:w-4/12 w-full md:mr-10 flex-wrap items-center gap-x-5 text-sm md:gap-0 justify-around md:text-lg capitalize  tracking-wider font-normal md:ml-auto">
       {" "}
       {links.map((link) => (
         <Link

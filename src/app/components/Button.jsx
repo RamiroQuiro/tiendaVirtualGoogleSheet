@@ -7,7 +7,7 @@ export default function Button() {
   return (
     <button
     onClick={()=>setLike(!like)}
-    className={`rounded-full w-10 h-10 ${like?'bg-red-200':'bg-gray-200'} p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4`}>
+    className={`rounded-full w-10 h-10 ${like?'bg-red-200':'bg-gray-200'} p-2 border-0 inline-flex items-center justify-center text-gray-500 ml-4`}>
       <svg
         fill={like?'red':'gray'}
      

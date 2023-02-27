@@ -16,7 +16,6 @@ export default function CarritoHeader() {
       shallow
     );
 
-console.log(items)
   if (items.length > 0)
     return (
       <div

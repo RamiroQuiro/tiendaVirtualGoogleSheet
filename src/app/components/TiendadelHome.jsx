@@ -16,6 +16,8 @@ export default function TiendadelHome({ data }) {
 const {items}=useCarritoCompras((state) => ({
   items: state.items,
 }));
+
+// console.log(Object.values(data?.data[0]).includes("cocina"))
   return (
     <div className="flex w-full flex-wrap gap-1 mx-auto py-10 px-5 justify-around items-start">
       {data?.data

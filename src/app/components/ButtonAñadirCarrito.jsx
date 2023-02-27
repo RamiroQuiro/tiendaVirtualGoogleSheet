@@ -15,7 +15,7 @@ export default function ButtonAñadirCarrito({ item }) {
     }),
     shallow
   );
-  const [qtyItems, setQtyItems] = useState(0);
+  const [qtyItems, setQtyItems] = useState(cantidadPorItem(item));
   const handleButton = () => {
     addItemtoCart(item);
     setQtyItems(cantidadPorItem(item));
@@ -25,19 +25,15 @@ const handleRestarItems=()=>{
   restarItemCarrito(item)
 setQtyItems(cantidadPorItem(item));
 }
-const arrayFind=items.find(it=>it.id==item.id)
-// if (!arrayFind) {
-//     setQtyItems(0)
-// }
+const arrayFind=items.includes(item)
 
-console.log(arrayFind)
 
   return (
     <>
-      {qtyItems > 0 && (
+      {arrayFind  > 0 && (
         <button 
         onClick={handleRestarItems}
-        className="w-auto animate-[aparecer_0.5s_ease-in-out] px-3 py-3 text-xs text-white bg-blue-500 border-0  focus:outline-none  mx-auto items-center hover:bg-blue-600 rounded-l-lg ">
+        className="w-auto animate-[aparecer_0.5s_ease-in-out] px-3 py-3 text-xs text-white bg-blue-500 border-0  focus:outline-none  mx-auto items-center hover:bg-blue-600 rounded-l ">
           <svg
             width="18"
             height="20"
@@ -65,14 +61,14 @@ console.log(arrayFind)
         </button>
       )}
 
-      {qtyItems > 0 ?
+      {arrayFind > 0 ?
       <span className={`py-2.5 w-4/12 mx-auto text-white border-0 font-medium  focus:outline-none bg-blue-500 text-center `}>{qtyItems  }</span>
       :
       null
     }
       <button
         onClick={handleButton}
-        className={`flex py-3 w-11/12 flex-auto items-center text-white border-0 font-medium  focus:outline-none hover:bg-blue-600 ${qtyItems>0?"rounded-r-lg bg-blue-500 ":"rounded-lg text-neutral-700  bg-neutral-300  hover:text-white"}`}
+        className={`flex py-3 w-11/12 flex-auto items-center  border-0 font-medium  focus:outline-none hover:bg-blue-600 ${arrayFind>0?"rounded-r bg-blue-500 text-gray-100 pr-2":"rounded text-neutral-500  bg-neutral-200  hover:text-white"}`}
       >
         <span className="text-sm text-center mx-auto"> Añadir al Carrito</span>
       </button>

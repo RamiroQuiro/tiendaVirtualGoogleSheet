@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import Logo from "../../images/logoCarpinteria.png";
+import Logo from "../../../public/logoCarpinteria.png";
 import InputSearch from "./InputSearch";
 import Menu from "./menu";
 
@@ -22,12 +22,12 @@ export default function Header() {
     <header
       className={`${
         scrollTop > 395 && "fixed z-50 animate-[aparecer_0.5s]"
-      } text-gray-500 md:h-[70px] py-5 md:py-0 body-font w-full mx-auto bg-white`}
+      } text-gray-500 md:h-[70px] py-5 md:py-0 body-font border-b w-full  mx-auto bg-white`}
     >
-      <div className=" mx-auto flex md:h-16 md:pt-1 px-16 md:p-0 lg:px-5 flex-col md:flex-row  justify-center lg:justify-around md:justify-around items-center">
+      <div className=" mx-auto flex md:h-16 md:pt-1   px-16 md:p-0 lg:px-5 flex-col md:flex-row  justify-center md:justify-around items-center">
         <Link
           href={"/"}
-          className="md:w-3/12 hidden   md:flex mx-auto  h-full items-center gap-2 "
+          className="md:w-3/12 hidden  md:flex mx-auto  h-full items-center gap-2 "
         >
           <Image
             src={Logo}
