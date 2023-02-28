@@ -5,6 +5,7 @@ export default function InputSearch({label}) {
 
 const [inputState, setInputState] = useState("")
   const {inputSearh,inputSearchSubCategory}=useFilterProduct((state)=>({
+    filterCategory:state.filterCategory,
     inputSearh:state.inputSearch,
     inputSearchSubCategory:state.inputSearchSubCategory
   }))
@@ -16,6 +17,7 @@ const [inputState, setInputState] = useState("")
 
   const handleOnChangeInput=(e)=>{
 setInputState(e.target.value)
+inputSearh(inputState);
   }
 
   
@@ -26,7 +28,6 @@ setInputState(e.target.value)
       >
         <input
         onChange={handleOnChangeInput}
-        onSubmit={handleBuscarProductos}
         value={inputState}
           type="search"
           name="buscar"

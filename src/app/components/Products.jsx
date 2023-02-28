@@ -18,8 +18,7 @@ export default function Products({ item, showAs }) {
           href={"/store/" + item.id}
         >
           <Image
-            width={100}
-            height={100}
+          layout="fill"
             alt={item.title}
             className="rounded-xl object-center  w-10/12 h-4/6 object-cover m-auto block"
             src={item.image_url}
@@ -55,13 +54,14 @@ export default function Products({ item, showAs }) {
     return (
       <div className="border flex justify-between gap-5 relative rounded w-full p-1 animate-aparecer  mx-auto  md:h-32">
         <ButtonSacarProductCarrito item={item} />
+        <div className="md:w-2/3 w-1/2 md:h-28 py-2 relative">
           <Image
-            width={30}
-            height={30}
+            fill
             alt={item.title}
             src={item.image_url}
-            className="md:w-1/4 w-1/2 object-cover md:h-32 py-2 object-center rounded-lg"
+            className=" object-cover  object-center rounded-lg"
           />
+          </div>
         <div className="w-full mx-auto h-full flex flex-col items-stretch justify-between">
     
             <h2 className="md:text-sm text-xs title-font tracking-widest">

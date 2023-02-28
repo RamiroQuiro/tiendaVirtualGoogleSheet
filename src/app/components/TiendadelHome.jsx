@@ -22,16 +22,19 @@ const {items}=useCarritoCompras((state) => ({
     <div className="flex w-full flex-wrap gap-1 mx-auto py-10 px-5 justify-around items-start">
       {data?.data
         ?.filter((prod) => {
+          let busquedaCategory=prod.category.toUpperCase().includes(filterCategory.toUpperCase())
+          let busquedaSubcategory=prod.subcategory.toUpperCase().includes(filterCategory.toUpperCase())
           if (filterCategory == "all") return prod;
-          return prod.category == filterCategory;
+          if (busquedaCategory || busquedaSubcategory)return prod
         })
         .filter((subCat) => {
           if (filterSubCategory == "all") return subCat;
-            return  subCat.subcategory == filterSubCategory;
+            return  subCat.subcategory.toUpperCase() == filterSubCategory.toUpperCase();
         })
-        .map((opcion) => (
+        ?.map((opcion) => (
           <Products showAs={"card"} item={opcion} key={opcion?.id}/>
-        ))}
+        ))
+        }
     </div>
   );
 }
