@@ -7,7 +7,7 @@ export default function ButtondePagarCarrito({ getSubtotal }) {
     alert('paga meeen')
   }
   return (
-    <div className="px-6 pt-3 absolute bottom-0 h-[18vh] bg-gray-200  lg:flex-shrink-1 lg:p-5 w-full">
+    <div className="px-6 pt-3 absolute bottom-0 h-[15vh] bg-gray-200  lg:flex-shrink-1 lg:p-5 w-full">
       <button
       onClick={handlePagar}
         type="button"

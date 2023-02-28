@@ -4,9 +4,9 @@ import React from "react";
 import ButtonAñadirCarrito from "./ButtonAñadirCarrito";
 import ButtonSacarProductCarrito from "./ButtonSacarProductCarrito";
 import ButtonLike from "./Button";
-
-
+import ImagenComponent from "./ImagenComponent";
 export default function Products({ item, showAs }) {
+  
   if (showAs === "card") {
     return (
       <div
@@ -17,11 +17,8 @@ export default function Products({ item, showAs }) {
           className="block relative h-5/6  w-full rounded mt-5 overflow-hidden"
           href={"/store/" + item.id}
         >
-          <Image
-          layout="fill"
-            alt={item.title}
-            className="rounded-xl object-center  w-10/12 h-4/6 object-cover m-auto block"
-            src={item.image_url}
+          <ImagenComponent
+              item={item}        
           />
         </Link>
         <div className="mt-5 ml-2">
@@ -34,11 +31,12 @@ export default function Products({ item, showAs }) {
               {item.category}
             </Link>
           </h3>
-          <Link 
-           href={"/store/" + item.id}
-          className="text-gray-900 title-font text-lg font-medium hover:underline cursor-pointer">
+          <Link
+            href={"/store/" + item.id}
+            className="text-gray-900 title-font text-lg font-medium hover:underline cursor-pointer"
+          >
             {item.title}
-            </Link>
+          </Link>
         </div>
         <div className="flex w-full items-center justify-between my-2 px-2">
           <p className="font-semibold">${item.price}</p>
@@ -56,20 +54,23 @@ export default function Products({ item, showAs }) {
         <ButtonSacarProductCarrito item={item} />
         <div className="md:w-2/3 w-1/2 md:h-28 py-2 relative">
           <Image
+            loader={myLoader}
             fill
+            quality={100}
             alt={item.title}
-            src={item.image_url}
-            className=" object-cover  object-center rounded-lg"
+            src={item.src}
+            className=" object-cover  object-center rounded"
           />
-          </div>
+        </div>
         <div className="w-full mx-auto h-full flex flex-col items-stretch justify-between">
-    
-            <h2 className="md:text-sm text-xs title-font tracking-widest">
-              {item.category}
-            </h2>
-            <h1 className="text-neutral-700 md:text-lg text-sm font-medium ">{item.title}</h1>
+          <h2 className="md:text-sm text-xs title-font tracking-widest">
+            {item.category}
+          </h2>
+          <h1 className="text-neutral-700 md:text-lg text-sm font-medium ">
+            {item.title}
+          </h1>
 
-            {/* <div className="flex  w-full my-1 pb-2 text-sm items-center  border-b-2 border-gray-200 ">
+          {/* <div className="flex  w-full my-1 pb-2 text-sm items-center  border-b-2 border-gray-200 ">
               <div className="flex mr-2 items-center justify-center">
                 <span className="mr-1">Color</span>
                 <button className="border border-gray-300 rounded-full w-4 h-4 focus:outline-none"></button>
@@ -100,13 +101,13 @@ export default function Products({ item, showAs }) {
                 </div>
               </div>
             </div> */}
-            <div className="flex w-full items-center justify-around border-t-2 py-1">
-              <span className="font-medium w-full items-center md:text-base text-sm">
-                Cantidad {item.qty}
-              </span>
-              <span className="w-full title-font font-medium md:text-xl text-gray-900">
-                $ {item.price * item.qty}
-              </span>
+          <div className="flex w-full items-center justify-around border-t-2 py-1">
+            <span className="font-medium w-full items-center md:text-base text-sm">
+              Cantidad {item.qty}
+            </span>
+            <span className="w-full title-font font-medium md:text-xl text-gray-900">
+              $ {item.price * item.qty}
+            </span>
           </div>
         </div>
       </div>
@@ -116,13 +117,7 @@ export default function Products({ item, showAs }) {
     <section className="text-gray-600 body-font overflow-hidden bg-gray-50 w-full">
       <div className="container px-5 py-24 mx-auto">
         <div className="lg:w-4/5 mx-auto flex flex-wrap">
-          <Image
-            width={500}
-            height={500}
-            alt={item.title}
-            src={item.image_url}
-            className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded"
-          />
+        
           <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
             <h2 className="text-sm title-font text-gray-500 tracking-widest">
               {item.category}
