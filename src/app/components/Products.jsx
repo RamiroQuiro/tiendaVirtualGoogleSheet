@@ -19,13 +19,11 @@ export default function Products({ item, showAs }) {
           className="block relative h-5/6  w-full rounded mt-5 overflow-hidden"
           href={"/store/" + item.id}
         >
-          <Image
-            loader={myLoader}
-            quality={50}
-            sizes="320"
-            fill
+          <img
+            width={"100%"}
+            height="100%"
             alt={item.title}
-            src={item.src}
+            src={item.image_url}
             className=" object-cover  object-center rounded"
           />
         </Link>
