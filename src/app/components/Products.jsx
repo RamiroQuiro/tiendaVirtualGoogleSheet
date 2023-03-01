@@ -7,7 +7,7 @@ import ButtonLike from "./Button";
 import ImagenComponent from "./ImagenComponent";
 export default function Products({ item, showAs }) {
   const myLoader = ({ src, width, quality }) => {
-    return `https://drive.google.com/uc?id=${src}`;
+    return `https://drive.google.com/uc?export=view&id=${src}`;
   };
   if (showAs === "card") {
     return (
