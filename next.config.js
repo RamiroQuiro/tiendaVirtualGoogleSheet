@@ -5,15 +5,15 @@ const nextConfig = {
     domains:["lh3.googleusercontent.com","drive.google.com","googleusercontent.com","docs.googleusercontent.com"],
     remotePatterns: [
       { protocol: 'https',
-        hostname: '**.google.com',
+        hostname: '**.googleusercontent.com',
         port: '',
-        pathname: '/s/**',
       },
     ],
   },
   experimental: {
     appDir: true,
   },
+  eslint: { ignoreDuringBuilds: true },
 }
 
 module.exports = nextConfig

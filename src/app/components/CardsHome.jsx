@@ -16,13 +16,9 @@ const TarjetasColoresHome = ({ className, h2, span, button, src }) => {
           {button}
         </button>
       </div>
-      <Image
-        src={src}
-        width={250}
-        height={250}
-        className="absolute w-2/3  bottom-0 right-0"
-        alt="illustraciones"
-      />
+      <div className="absolute w-2/3 h-full bottom-0 right-0">
+        <Image src={src}  alt="illustraciones" quality={100} />
+      </div>
     </div>
   );
 };

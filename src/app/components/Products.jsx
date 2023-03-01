@@ -6,7 +6,9 @@ import ButtonSacarProductCarrito from "./ButtonSacarProductCarrito";
 import ButtonLike from "./Button";
 import ImagenComponent from "./ImagenComponent";
 export default function Products({ item, showAs }) {
-  
+  const myLoader = ({ src, width, quality }) => {
+    return `https://drive.google.com/uc?id=${src}`;
+  };
   if (showAs === "card") {
     return (
       <div
@@ -17,8 +19,14 @@ export default function Products({ item, showAs }) {
           className="block relative h-5/6  w-full rounded mt-5 overflow-hidden"
           href={"/store/" + item.id}
         >
-          <ImagenComponent
-              item={item}        
+          <Image
+            loader={myLoader}
+            quality={50}
+            sizes="320"
+            fill
+            alt={item.title}
+            src={item.src}
+            className=" object-cover  object-center rounded"
           />
         </Link>
         <div className="mt-5 ml-2">
@@ -55,8 +63,9 @@ export default function Products({ item, showAs }) {
         <div className="md:w-2/3 w-1/2 md:h-28 py-2 relative">
           <Image
             loader={myLoader}
+            quality={50}
+            sizes="320 640 750"
             fill
-            quality={100}
             alt={item.title}
             src={item.src}
             className=" object-cover  object-center rounded"
@@ -70,37 +79,6 @@ export default function Products({ item, showAs }) {
             {item.title}
           </h1>
 
-          {/* <div className="flex  w-full my-1 pb-2 text-sm items-center  border-b-2 border-gray-200 ">
-              <div className="flex mr-2 items-center justify-center">
-                <span className="mr-1">Color</span>
-                <button className="border border-gray-300 rounded-full w-4 h-4 focus:outline-none"></button>
-                <button className="border border-gray-300 ml-1 bg-gray-700 rounded-full w-4 h-4 focus:outline-none"></button>
-                <button className="border border-gray-300 ml-1 bg-indigo-500 rounded-full w-4 h-4 focus:outline-none"></button>
-              </div>
-              <div className="flex   items-center">
-                <span className="mx-1">Size</span>
-                <div className="relative">
-                  <select className="rounded  border appearance-none border-gray-300 py-1 focus:outline-none focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 pl-1 pr-6">
-                    <option>SM</option>
-                    <option>L</option>
-                    <option>XL</option>
-                  </select>
-                  <span className="absolute right-0 top-0 h-full w-10 text-center text-gray-600 pointer-events-none flex items-center justify-center">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      className="w-4 h-4"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M6 9l6 6 6-6"></path>
-                    </svg>
-                  </span>
-                </div>
-              </div>
-            </div> */}
           <div className="flex w-full items-center justify-around border-t-2 py-1">
             <span className="font-medium w-full items-center md:text-base text-sm">
               Cantidad {item.qty}
@@ -115,9 +93,10 @@ export default function Products({ item, showAs }) {
   }
   return (
     <section className="text-gray-600 body-font overflow-hidden bg-gray-50 w-full">
-      <div className="container px-5 py-24 mx-auto">
-        <div className="lg:w-4/5 mx-auto flex flex-wrap">
-        
+        <div className="lg:w-4/5   px-5 py-24 mx-auto flex  items-center justify-between">
+          <div >
+            <ImagenComponent item={item} key={item.id} />
+          </div>
           <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
             <h2 className="text-sm title-font text-gray-500 tracking-widest">
               {item.category}
@@ -264,7 +243,6 @@ export default function Products({ item, showAs }) {
               <ButtonLike />
             </div>
           </div>
-        </div>
       </div>
     </section>
   );

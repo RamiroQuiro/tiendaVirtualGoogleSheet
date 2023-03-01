@@ -1,34 +1,29 @@
 "use client";
 import { useState } from "react";
 import { useFilterProduct } from "../../context/filter";
-export default function InputSearch({label}) {
-
-const [inputState, setInputState] = useState("")
-  const {inputSearh,inputSearchSubCategory}=useFilterProduct((state)=>({
-    filterCategory:state.filterCategory,
-    inputSearh:state.inputSearch,
-    inputSearchSubCategory:state.inputSearchSubCategory
-  }))
-
+export default function InputSearch({ label }) {
+  const [inputState, setInputState] = useState("");
+  const { inputSearh, inputSearchSubCategory } = useFilterProduct((state) => ({
+    filterCategory: state.filterCategory,
+    inputSearh: state.inputSearch,
+    inputSearchSubCategory: state.inputSearchSubCategory,
+  }));
 
   const handleBuscarProductos = () => {
     inputSearh(inputState);
   };
 
-  const handleOnChangeInput=(e)=>{
-setInputState(e.target.value)
-inputSearh(inputState);
-  }
+  const handleOnChangeInput = (e) => {
+    setInputState(e.target.value);
+    inputSearh(inputState);
+  };
 
-  
   if (label === "navBar")
     return (
-      <div
-        className="bg-gray-100 rounded-full hidden md:block md:w-4/12 "
-      >
+      <div className="bg-gray-100 rounded-full hidden md:block md:w-4/12 ">
         <input
-        onChange={handleOnChangeInput}
-        value={inputState}
+          onChange={handleOnChangeInput}
+          value={inputState}
           type="search"
           name="buscar"
           id="buscar"
@@ -40,20 +35,18 @@ inputSearh(inputState);
 
   if (label === "banner")
     return (
-      <div
-        className="relative bg-white rounded-full w-full overflow-hidden border-0  shadow-gray-600/30"
-      >
+      <div className="relative bg-white rounded-full w-full overflow-hidden border-0  shadow-gray-600/30">
         <input
-         onChange={handleOnChangeInput}
-        value={inputState}
-         type="search"
+          onChange={handleOnChangeInput}
+          value={inputState}
+          type="search"
           name="buscar"
           id="buscar"
           className=" w-full py-4 top-0 left-0 px-5 text-gray-600 font-semibold  bg-white rounded-full border border-gray-300 focus:border-yellow-500 focus:ring-2  outline-none transition-colors duration-200 ease-in-out"
           placeholder="Buscar tu producto..."
         />
         <label
-        onClick={handleBuscarProductos}
+          onClick={handleBuscarProductos}
           htmlFor="buscar"
           className="absolute top-0 right-5 bg-gray-800/90 group text-neutral-100 hover:bg-sky-800 duration-150 cursor-pointer font-medium text-sm tracking-wider hover:tracking-widest h-full p-2 text-center flex flex-col items-center mx-auto justify-center rounded-full"
         >
@@ -85,9 +78,5 @@ inputSearh(inputState);
       </div>
     );
 
-    return(
-      <span>
-        Cargando...
-      </span>
-    )
+  return <span>Cargando...</span>;
 }
