@@ -64,7 +64,7 @@ export default function Products({ item, showAs }) {
           <Image
             loader={myLoader}
             quality={50}
-            sizes="320 640 750"
+            sizes="320 "
             fill
             alt={item.title}
             src={item.src}
@@ -94,7 +94,7 @@ export default function Products({ item, showAs }) {
   return (
     <section className="text-gray-600 body-font overflow-hidden bg-gray-50 w-full">
         <div className="lg:w-4/5   px-5 py-24 mx-auto flex  items-center justify-between">
-          <div >
+          <div className="w-1/2">
             <ImagenComponent item={item} key={item.id} />
           </div>
           <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
